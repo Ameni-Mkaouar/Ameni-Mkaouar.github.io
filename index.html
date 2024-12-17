@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Name - Researcher</title>
-  
+
   <!-- Favicon for the tab (Graduation Hat Icon) -->
   <link rel="icon" href="graduation-hat-icon.ico" type="image/x-icon">
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  
+
   <style>
     /* General Styles */
     body {
@@ -120,6 +120,22 @@
       margin: 10px 0;
     }
 
+    .software-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .software-item {
+      width: 30%;
+      margin: 10px 0;
+    }
+
+    .software-item img {
+      width: 50px;
+      height: 50px;
+    }
+
     /* Footer */
     footer {
       background-color: #333;
@@ -127,6 +143,32 @@
       padding: 10px 0;
       text-align: center;
       font-size: 14px;
+    }
+
+    /* Link to PDF */
+    .cv-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007acc;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .cv-link:hover {
+      background-color: #005f99;
+    }
+
+    /* Icon Style */
+    .icon-link {
+      margin-left: 10px;
+      font-size: 20px;
+      color: #007acc;
+    }
+
+    .icon-link:hover {
+      color: #005f99;
     }
   </style>
 </head>
@@ -141,6 +183,8 @@
         <li><a href="#publications">Publications</a></li>
         <li><a href="#posters">Posters</a></li>
         <li><a href="#media">Media</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#software">Software</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -157,6 +201,7 @@
         <p class="social">
           GitHub: <a href="https://github.com/your-username">your-username</a> | LinkedIn: <a href="https://linkedin.com/in/your-profile">Your Profile</a>
         </p>
+        <a href="CV.pdf" class="cv-link" target="_blank">Download CV</a>
       </div>
     </div>
   </section>
@@ -174,9 +219,16 @@
     <div class="container">
       <h2>Publications</h2>
       <ul>
-        <li><strong>Publication Title</strong> - Journal Name, Year</li>
-        <li><strong>Publication Title</strong> - Journal Name, Year</li>
-        <li><strong>Publication Title</strong> - Journal Name, Year</li>
+        <li>
+          <strong>Publication Title</strong> - Journal Name, Year
+          <a href="publication1.pdf" class="icon-link" target="_blank">📄</a>
+          <a href="https://example.com" class="icon-link" target="_blank">🔗</a>
+        </li>
+        <li>
+          <strong>Publication Title</strong> - Journal Name, Year
+          <a href="publication2.pdf" class="icon-link" target="_blank">📄</a>
+          <a href="https://example.com" class="icon-link" target="_blank">🔗</a>
+        </li>
       </ul>
     </div>
   </section>
@@ -186,6 +238,40 @@
     <div class="container">
       <h2>Posters & Presentations</h2>
       <p>Here you can display your conference posters or presentations. Add links to your PDF posters, images, or descriptions of your talks.</p>
+    </div>
+  </section>
+
+  <!-- Software Section -->
+  <section id="software">
+    <div class="container">
+      <h2>Software</h2>
+      <p>Below are the software tools I use regularly in my research:</p>
+      <div class="software-list">
+        <div class="software-item">
+          <img src="software1-icon.png" alt="Software 1">
+          <p>Software 1</p>
+        </div>
+        <div class="software-item">
+          <img src="software2-icon.png" alt="Software 2">
+          <p>Software 2</p>
+        </div>
+        <div class="software-item">
+          <img src="software3-icon.png" alt="Software 3">
+          <p>Software 3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>PhD in Computer Science</strong> - University Name, Year</li>
+        <li><strong>Master's in Data Science</strong> - University Name, Year</li>
+        <li><strong>Bachelor's in Software Engineering</strong> - University Name, Year</li>
+      </ul>
     </div>
   </section>
 
