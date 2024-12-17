@@ -4,35 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Name - Researcher</title>
-  
-  <!-- Favicon for the tab (Graduation Hat Icon) -->
-  <link rel="icon" href="graduation-hat-icon.ico" type="image/x-icon">
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  
   <style>
-    /* General Styles */
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f4f7f6;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling */
     }
 
-    .container {
-      width: 80%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* Header and Navigation */
+    /* Navigation styles */
     header {
       position: sticky;
       top: 0;
-      background-color: #ff6600; /* Orange color */
+      background-color: #ff6600;
       padding: 10px 0;
       z-index: 1000;
     }
@@ -53,148 +34,29 @@
       color: #fff;
       text-decoration: none;
       font-size: 18px;
-      font-weight: 500;
     }
 
     nav ul li a:hover {
       color: #333;
     }
 
-    /* Home Section */
-    #home {
-      background-color: #fff;
-      padding: 40px 0;
-      margin-top: 70px; /* To ensure content doesn't hide behind the fixed navbar */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .profile-photo {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 3px solid #007acc;
-    }
-
-    .profile-info {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-top: 15px;
-      font-weight: 700;
-    }
-
-    .position {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    .social-links {
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      color: #007acc;
-      margin: 0 15px;
-      font-size: 24px;
-      text-decoration: none;
-    }
-
-    .social-links a:hover {
-      color: #ff6600; /* Change to orange color on hover */
-    }
-
-    .social-links i {
-      vertical-align: middle;
-    }
-
-    .social-links i.github {
-      color: #24292f;
-    }
-
-    .social-links i.orcid {
-      color: #a6ce39;
-    }
-
-    .social-links i.linkedin {
-      color: #0077b5;
-    }
-
-    .social-links i.instagram {
-      color: #e4405f;
-    }
-
-    .social-links i.researchgate {
-      color: #00cc66;
-    }
-
-    /* Sidebar Layout */
-    .bio-section {
-      display: flex;
-      justify-content: space-between;
-      margin-left: 20px;
-    }
-
-    .bio-item {
-      width: 45%;
-      margin-bottom: 20px;
-    }
-
-    /* Sections */
     section {
+      padding: 60px 20px; /* Padding to account for the fixed header */
+      margin-top: 80px; /* Margin to create space after the sticky navbar */
+    }
+
+    /* Example sections */
+    #home {
+      background-color: #f4f7f6;
+    }
+    #science, #publications, #projects {
       background-color: #fff;
-      padding: 40px 0;
-      margin: 20px 0;
-    }
-
-    h2 {
-      font-size: 28px;
-      color: #007acc;
-      margin-bottom: 20px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-
-    .links a {
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 10px 0;
-      text-align: center;
-      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Header and Navigation -->
   <header>
     <nav>
       <ul>
@@ -202,99 +64,30 @@
         <li><a href="#science">Science</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#posters">Posters</a></li>
-        <li><a href="#media">Media</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Home Section -->
+  <!-- Sections -->
   <section id="home">
-    <div class="container">
-      <div class="profile">
-        <img src="profile.jpg" alt="Your Name" class="profile-photo">
-        <div class="profile-info">
-          <h1>Your Name</h1>
-          <p class="position">Research Scientist at NASA Goddard Space Flight Center</p>
-
-          <!-- Social Links -->
-          <div class="social-links">
-            <a href="https://github.com/your-username" target="_blank">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://orcid.org/0000-0002-1825-0097" target="_blank">
-              <i class="fab fa-orcid"></i> ORCID
-            </a>
-            <a href="https://linkedin.com/in/your-profile" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://instagram.com/your-profile" target="_blank">
-              <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="https://www.researchgate.net/profile/Your-Name" target="_blank">
-              <i class="fab fa-researchgate"></i> ResearchGate
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bio Section (Side by Side with the Photo) -->
-      <div class="bio-section">
-        <div class="bio-item">
-          <h2>Bio</h2>
-          <p>Write a brief bio here. Include information about your background, research, and current work. This should provide visitors with a general overview of who you are and what you do.</p>
-        </div>
-        <div class="bio-item">
-          <h2>Interests</h2>
-          <p>Share your research interests here. This section could include areas of study, specific topics, or emerging trends you're excited about.</p>
-        </div>
-      </div>
-
-      <div class="bio-section">
-        <div class="bio-item">
-          <h2>Education</h2>
-          <p>Provide details about your educational background here. Include degrees, institutions, and dates. You could also list any relevant coursework or certifications.</p>
-        </div>
-      </div>
-    </div>
+    <h1>Home Section</h1>
+    <p>Welcome to my website.</p>
   </section>
 
-  <!-- Science Section -->
   <section id="science">
-    <div class="container">
-      <h2>Science</h2>
-      <p>Description of your research and scientific work. You can explain your areas of expertise, the projects you've been involved with, and the contributions you've made to your field.</p>
-    </div>
+    <h1>Science Section</h1>
+    <p>Information about my scientific work.</p>
   </section>
 
-  <!-- Publications Section -->
   <section id="publications">
-    <div class="container">
-      <h2>Publications</h2>
-      <ul>
-        <li>
-          <strong>Publication Title 1</strong> - Journal Name, Year
-          <div class="links">
-            <a href="path-to-publication.pdf" target="_blank">PDF</a>
-            <a href="https://journal-link.com" target="_blank">URL</a>
-          </div>
-        </li>
-        <li>
-          <strong>Publication Title 2</strong> - Journal Name, Year
-          <div class="links">
-            <a href="path-to-publication.pdf" target="_blank">PDF</a>
-            <a href="https://journal-link.com" target="_blank">URL</a>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <h1>Publications Section</h1>
+    <p>List of my publications.</p>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Your Name. All Rights Reserved.</p>
-  </footer>
+  <section id="projects">
+    <h1>Projects Section</h1>
+    <p>Details of my projects.</p>
+  </section>
 
 </body>
 </html>
