@@ -120,6 +120,64 @@
       font-size: 2.2em;
       margin-bottom: 10px;
     }
+/* Container for bio and photo */
+.bio-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the left section (photo and social links) */
+.bio-left {
+  flex: 1;
+  text-align: center;
+}
+
+.bio-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff6600;  /* Optional: add a border color to the photo */
+}
+
+.social-links a {
+  margin: 10px;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);  /* Slight hover effect for icons */
+}
+
+/* Styling for the right section (bio text) */
+.bio-right {
+  flex: 2;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bio-right h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.bio-right p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
 
     /* Bio and Education Layout */
     #bio, #interests, #education {
@@ -198,16 +256,17 @@
     </nav>
   </header>
 
-  <!-- Home Section ------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-  <section id="home">
-    <img src="1733868390031.jpg" alt="Your Photo">
+  <!-- Home Section ------------------------------------------------------------------------------------------------------------------------------------------------------------- -
+ <section id="home">    
+  <div class="bio-container">
+    <div class="bio-left">
+    <img src="1733868390031.jpg" alt="Your Photo" class="bio-photo">
     <div class="profile-text">
       <h1>Ameni Mkaouar</h1>
       <p>Postdoctoral Research Associate at 
         <a href="https://gestar2.umbc.edu/directory/researchers-l-q/" target="_blank">GESTAR II, UMBC </a>,/ 
         <a href="https://science.gsfc.nasa.gov/sci/bio/ameni.mkaouar" target="_blank">NASA GSFC</a>
       <p>
-
       <div class="social-links">
         <a href="https://github.com/Ameni-Mkaouar" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://orcid.org/0000-0002-0391-1024" target="_blank"><i class="fab fa-orcid"></i></a>
@@ -215,9 +274,7 @@
         <a href="https://www.researchgate.net/profile/Ameni-Mkaouar-2" target="_blank"><i class="fab fa-researchgate"></i></a>
       </div>
     </div>
-  </section>
-
-  <!-- Bio Section -->
+  <div class="bio-right">
   <section id="bio">
     <h2>Bio</h2>
     <p> Dr. <strong>Mkaouar</strong> is a Postdoctoral Research Associate at GESTAR II, University of Maryland , Baltimore County (UMBC), and NASA Goddard Space Flight Center. Her research focuses on the development and application of 
@@ -225,10 +282,11 @@
     Dr. Mkaouar’s current work aims to refine vegetation structure estimation, with a particular focus on fusion techniques that combine different remote sensing data to achieve more accurate ecological and environmental insights.</p>
 <p>Prior to her current work, Dr. Mkaouar conducted research in various fields related to vegetation monitoring and landscape modeling. She has collaborated on projects using Terrestrial LiDAR to study vegetation structure.
   Her work continues to evolve with the integration of cutting-edge data science approaches and modeling tools to address complex ecological questions.</p>
+</div>
+</section>
+ 
 
-  </section>
-
-  <!-- Research Interests Section -->
+  <!-- Research Interests Section ----------------------------------------------------------------------------------------------------------------------------------------------------------->
   <section id="interests">
     <h2>Research Interests</h2>
     <p>Highlight the main areas of your research and what drives your scientific endeavors.</p>
