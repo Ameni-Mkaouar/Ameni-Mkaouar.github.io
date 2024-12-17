@@ -4,60 +4,204 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Name - CV</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header and Navigation */
+    header {
+      background-color: #333;
+      padding: 10px 0;
+      color: #fff;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #007acc;
+    }
+
+    /* Home Section */
+    #home {
+      background-color: #fff;
+      padding: 40px 0;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #007acc;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-top: 15px;
+      font-weight: 700;
+    }
+
+    .position, .email, .social {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .social a {
+      color: #007acc;
+    }
+
+    .social a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    section {
+      background-color: #fff;
+      padding: 40px 0;
+      margin: 20px 0;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #007acc;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Navigation Bar -->
   <header>
-    <img src="profile.jpg" alt="Your Name">
-    <h1>Your Name</h1>
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/your-username">your-username</a> | LinkedIn: <a href="https://linkedin.com/in/your-profile">Your Profile</a></p>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#science">Science</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#posters">Posters</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Ph.D., Environmental Science</strong> - University of Maryland (2020–2024)</li>
-    </ul>
+  <!-- Home Section -->
+  <section id="home">
+    <div class="container">
+      <div class="profile">
+        <img src="profile.jpg" alt="Your Name" class="profile-photo">
+        <h1>Your Name</h1>
+        <p class="position">Research Scientist at NASA Goddard Space Flight Center</p>
+        <p class="email"><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p class="social">
+          GitHub: <a href="https://github.com/your-username">your-username</a> | LinkedIn: <a href="https://linkedin.com/in/your-profile">Your Profile</a>
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <ul>
-      <li>
-        <strong>Research Scientist</strong> - NASA Goddard Space Flight Center (2023–Present)
-        <ul>
-          <li>Developed workflows for fusing LiDAR and stereo data, improving DSM accuracy by 15%.</li>
-        </ul>
-      </li>
-    </ul>
+  <!-- Science Section -->
+  <section id="science">
+    <div class="container">
+      <h2>Science</h2>
+      <p>Description of your research and scientific work. You can explain your areas of expertise, the projects you've been involved with, and the contributions you've made to your field.</p>
+    </div>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Python, MATLAB, Git, QGIS</li>
-      <li>Data Visualization, Remote Sensing</li>
-    </ul>
+  <!-- Publications Section -->
+  <section id="publications">
+    <div class="container">
+      <h2>Publications</h2>
+      <ul>
+        <li><strong>Publication Title</strong> - Journal Name, Year</li>
+        <li><strong>Publication Title</strong> - Journal Name, Year</li>
+        <li><strong>Publication Title</strong> - Journal Name, Year</li>
+      </ul>
+    </div>
   </section>
 
+  <!-- Posters Section -->
+  <section id="posters">
+    <div class="container">
+      <h2>Posters & Presentations</h2>
+      <p>Here you can display your conference posters or presentations. Add links to your PDF posters, images, or descriptions of your talks.</p>
+    </div>
+  </section>
+
+  <!-- Media Section -->
+  <section id="media">
+    <div class="container">
+      <h2>Media</h2>
+      <p>Showcase any media coverage you’ve had, including interviews, podcasts, and articles. You can include links to videos or external articles.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>Phone: (123) 456-7890</p>
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>Phone: (123) 456-7890</p>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Your Name</p>
+    <p>&copy; 2024 Your Name. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
