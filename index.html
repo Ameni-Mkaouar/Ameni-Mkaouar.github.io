@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Name - Researcher</title>
-
+  
   <!-- Favicon for the tab (Graduation Hat Icon) -->
   <link rel="icon" href="graduation-hat-icon.ico" type="image/x-icon">
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
+  
   <style>
     /* General Styles */
     body {
@@ -65,10 +65,15 @@
       background-color: #fff;
       padding: 40px 0;
       margin-top: 70px; /* To ensure content doesn't hide behind the fixed navbar */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .profile {
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .profile-photo {
@@ -78,23 +83,71 @@
       border: 3px solid #007acc;
     }
 
+    .profile-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+
     h1 {
       font-size: 36px;
       margin-top: 15px;
       font-weight: 700;
     }
 
-    .position, .email, .social {
+    .position {
       font-size: 18px;
       margin-top: 10px;
     }
 
-    .social a {
-      color: #007acc;
+    .social-links {
+      margin-top: 20px;
     }
 
-    .social a:hover {
-      text-decoration: underline;
+    .social-links a {
+      color: #007acc;
+      margin: 0 15px;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: #ff6600; /* Change to orange color on hover */
+    }
+
+    .social-links i {
+      vertical-align: middle;
+    }
+
+    .social-links i.github {
+      color: #24292f;
+    }
+
+    .social-links i.orcid {
+      color: #a6ce39;
+    }
+
+    .social-links i.linkedin {
+      color: #0077b5;
+    }
+
+    .social-links i.instagram {
+      color: #e4405f;
+    }
+
+    .social-links i.researchgate {
+      color: #00cc66;
+    }
+
+    /* Sidebar Layout */
+    .bio-section {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 20px;
+    }
+
+    .bio-item {
+      width: 45%;
+      margin-bottom: 20px;
     }
 
     /* Sections */
@@ -120,20 +173,13 @@
       margin: 10px 0;
     }
 
-    .software-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    .links a {
+      color: #007acc;
+      text-decoration: none;
     }
 
-    .software-item {
-      width: 30%;
-      margin: 10px 0;
-    }
-
-    .software-item img {
-      width: 50px;
-      height: 50px;
+    .links a:hover {
+      text-decoration: underline;
     }
 
     /* Footer */
@@ -143,32 +189,6 @@
       padding: 10px 0;
       text-align: center;
       font-size: 14px;
-    }
-
-    /* Link to PDF */
-    .cv-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #007acc;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .cv-link:hover {
-      background-color: #005f99;
-    }
-
-    /* Icon Style */
-    .icon-link {
-      margin-left: 10px;
-      font-size: 20px;
-      color: #007acc;
-    }
-
-    .icon-link:hover {
-      color: #005f99;
     }
   </style>
 </head>
@@ -181,10 +201,9 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#science">Science</a></li>
         <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#posters">Posters</a></li>
         <li><a href="#media">Media</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#software">Software</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -195,13 +214,48 @@
     <div class="container">
       <div class="profile">
         <img src="profile.jpg" alt="Your Name" class="profile-photo">
-        <h1>Your Name</h1>
-        <p class="position">Research Scientist at NASA Goddard Space Flight Center</p>
-        <p class="email"><a href="mailto:your.email@example.com">your.email@example.com</a></p>
-        <p class="social">
-          GitHub: <a href="https://github.com/your-username">your-username</a> | LinkedIn: <a href="https://linkedin.com/in/your-profile">Your Profile</a>
-        </p>
-        <a href="CV.pdf" class="cv-link" target="_blank">Download CV</a>
+        <div class="profile-info">
+          <h1>Your Name</h1>
+          <p class="position">Research Scientist at NASA Goddard Space Flight Center</p>
+
+          <!-- Social Links -->
+          <div class="social-links">
+            <a href="https://github.com/your-username" target="_blank">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://orcid.org/0000-0002-1825-0097" target="_blank">
+              <i class="fab fa-orcid"></i> ORCID
+            </a>
+            <a href="https://linkedin.com/in/your-profile" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://instagram.com/your-profile" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.researchgate.net/profile/Your-Name" target="_blank">
+              <i class="fab fa-researchgate"></i> ResearchGate
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio Section (Side by Side with the Photo) -->
+      <div class="bio-section">
+        <div class="bio-item">
+          <h2>Bio</h2>
+          <p>Write a brief bio here. Include information about your background, research, and current work. This should provide visitors with a general overview of who you are and what you do.</p>
+        </div>
+        <div class="bio-item">
+          <h2>Interests</h2>
+          <p>Share your research interests here. This section could include areas of study, specific topics, or emerging trends you're excited about.</p>
+        </div>
+      </div>
+
+      <div class="bio-section">
+        <div class="bio-item">
+          <h2>Education</h2>
+          <p>Provide details about your educational background here. Include degrees, institutions, and dates. You could also list any relevant coursework or certifications.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -220,81 +274,26 @@
       <h2>Publications</h2>
       <ul>
         <li>
-          <strong>Publication Title</strong> - Journal Name, Year
-          <a href="publication1.pdf" class="icon-link" target="_blank">📄</a>
-          <a href="https://example.com" class="icon-link" target="_blank">🔗</a>
+          <strong>Publication Title 1</strong> - Journal Name, Year
+          <div class="links">
+            <a href="path-to-publication.pdf" target="_blank">PDF</a>
+            <a href="https://journal-link.com" target="_blank">URL</a>
+          </div>
         </li>
         <li>
-          <strong>Publication Title</strong> - Journal Name, Year
-          <a href="publication2.pdf" class="icon-link" target="_blank">📄</a>
-          <a href="https://example.com" class="icon-link" target="_blank">🔗</a>
+          <strong>Publication Title 2</strong> - Journal Name, Year
+          <div class="links">
+            <a href="path-to-publication.pdf" target="_blank">PDF</a>
+            <a href="https://journal-link.com" target="_blank">URL</a>
+          </div>
         </li>
       </ul>
-    </div>
-  </section>
-
-  <!-- Posters Section -->
-  <section id="posters">
-    <div class="container">
-      <h2>Posters & Presentations</h2>
-      <p>Here you can display your conference posters or presentations. Add links to your PDF posters, images, or descriptions of your talks.</p>
-    </div>
-  </section>
-
-  <!-- Software Section -->
-  <section id="software">
-    <div class="container">
-      <h2>Software</h2>
-      <p>Below are the software tools I use regularly in my research:</p>
-      <div class="software-list">
-        <div class="software-item">
-          <img src="software1-icon.png" alt="Software 1">
-          <p>Software 1</p>
-        </div>
-        <div class="software-item">
-          <img src="software2-icon.png" alt="Software 2">
-          <p>Software 2</p>
-        </div>
-        <div class="software-item">
-          <img src="software3-icon.png" alt="Software 3">
-          <p>Software 3</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education">
-    <div class="container">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>PhD in Computer Science</strong> - University Name, Year</li>
-        <li><strong>Master's in Data Science</strong> - University Name, Year</li>
-        <li><strong>Bachelor's in Software Engineering</strong> - University Name, Year</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Media Section -->
-  <section id="media">
-    <div class="container">
-      <h2>Media</h2>
-      <p>Showcase any media coverage you’ve had, including interviews, podcasts, and articles. You can include links to videos or external articles.</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>Phone: (123) 456-7890</p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Your Name. All rights reserved.</p>
+    <p>&copy; 2024 Your Name. All Rights Reserved.</p>
   </footer>
 
 </body>
