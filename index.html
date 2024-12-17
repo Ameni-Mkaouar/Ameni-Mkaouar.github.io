@@ -1,112 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dr. Ameni Mkaouar | Researcher & Scientist</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Ameni Mkaouar - Researcher & Scientist</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome icons -->
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      padding: 10px 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-left img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    /* Home Section */
+    #home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 50px; /* Top padding for sticky nav */
+      background-color: #fff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: 100px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: transform 0.3s ease;
+    }
+
+    #home:hover {
+      transform: translateY(-5px);
+    }
+
+    #home img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #ff6600;
+      margin-right: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    #home .profile-text {
+      max-width: 500px;
+    }
+
+    #home h1 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    #home p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    #home .social-links a {
+      margin: 0 15px;
+      font-size: 30px;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    #home .social-links a:hover {
+      color: #ff6600;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 50px 20px;
+    }
+
+    h2 {
+      color: #ff6600;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    /* Bio and Education Layout */
+    #bio, #interests, #education {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* Projects & Publications Section */
+    #projects, #publications {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    #projects a, #publications a {
+      color: #333;
+      font-size: 1.1em;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    #projects a:hover, #publications a:hover {
+      color: #ff6600;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    /* Responsive for smaller screens */
+    @media (max-width: 768px) {
+      #home {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #home img {
+        margin-bottom: 20px;
+      }
+
+      #home .profile-text {
+        max-width: 100%;
+      }
+
+      #bio, #interests, #education {
+        flex-direction: column;
+      }
+
+      #projects, #publications {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <h1 class="header-title">Dr. Ameni Mkaouar</h1>
-            <p class="header-subtitle">Researcher in Remote Sensing & Vegetation Dynamics</p>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#science">Science</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About</h2>
-            <div class="about-content">
-                <img src="1733868390031.jpg".jpg" alt="Dr. Ameni Mkaouar" class="profile-photo">
-                <p>Dr. Ameni Mkaouar is a researcher specializing in vegetation dynamics, remote sensing, and landscape modeling. She utilizes advanced techniques to study vegetation structure, topography, and their environmental interactions. Dr. Mkaouar integrates remote sensing data such as LiDAR and photogrammetry with sophisticated modeling approaches to provide insights into ecosystem behavior and environmental changes.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="header-left">
+      <img src="amini-photo.jpg" alt="Dr. Ameni Mkaouar">
+      <h1>Dr. Ameni Mkaouar</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#bio">Bio</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Science Section -->
-    <section id="science" class="section">
-        <div class="container">
-            <h2 class="section-title">Science</h2>
-            <p>Dr. Mkaouar’s research in vegetation structure and topography focuses on understanding ecological dynamics using remote sensing data and advanced modeling techniques. Key scientific contributions include:</p>
-            <ul class="science-list">
-                <li><strong>LiDAR and Photogrammetry Integration:</strong> Combining LiDAR and photogrammetry for enhanced vegetation and topography modeling.</li>
-                <li><strong>Advanced Modeling Techniques:</strong> Developing predictive models to estimate vegetation structure across various landscapes.</li>
-                <li><strong>Remote Sensing for Ecological Insights:</strong> Using remote sensing technologies to measure vegetation health, carbon storage, and biodiversity.</li>
-            </ul>
-            <p>These contributions are critical for ecological monitoring and land management, offering insights into the functioning of ecosystems worldwide.</p>
-        </div>
-    </section>
+  <!-- Home Section -->
+  <section id="home">
+    <div class="profile-text">
+      <h1>Dr. Ameni Mkaouar</h1>
+      <p>Postdoctoral Research Associate at <a href="https://gestar2.umbc.edu/" target="_blank">GESTAR II, UMBC</a> and NASA Goddard Space Flight Center</p>
+      <p>I focus on remote sensing, modeling, and environmental monitoring using LiDAR, photogrammetry, and advanced data analysis techniques.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/ameni-mkaouar" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/ameni_mkaouar" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://scholar.google.com/citations?user=your_google_scholar_id" target="_blank" title="Google Scholar"><i class="fab fa-google"></i></a>
+      </div>
+    </div>
+    <img src="1733868390031.jpg".jpg" alt="Dr. Ameni Mkaouar">
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Research Projects</h2>
-            <p>Dr. Mkaouar leads several exciting research projects aimed at advancing the understanding of vegetation structure, landscape modeling, and ecological conservation. These include:</p>
-            <div class="project-list">
-                <div class="project-item">
-                    <h3><a href="https://link-to-project-1.com" target="_blank">LiDAR-Based Vegetation Structure Mapping</a></h3>
-                    <p>This project explores the use of LiDAR data to map vegetation structure across diverse landscapes, focusing on forest ecosystems.</p>
-                </div>
-                <div class="project-item">
-                    <h3><a href="https://link-to-project-2.com" target="_blank">Fusion of Remote Sensing Data for Ecological Insights</a></h3>
-                    <p>Investigating the integration of LiDAR, photogrammetry, and other remote sensing technologies to enhance vegetation and terrain models for ecological monitoring.</p>
-                </div>
-                <div class="project-item">
-                    <h3><a href="https://link-to-project-3.com" target="_blank">Predictive Modeling for Vegetation Dynamics</a></h3>
-                    <p>Focusing on developing predictive models to understand how vegetation structure evolves under varying environmental conditions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Bio Section -->
+  <section id="bio">
+    <h2>Bio</h2>
+    <p>Dr. Mkaouar is a Postdoctoral Research Associate at GESTAR II, University of Maryland, Baltimore County (UMBC), and NASA Goddard Space Flight Center. Her research focuses on advanced remote sensing techniques and the development of models to analyze forest ecosystems and their structure, with a special interest in forest biomass estimation, carbon modeling, and remote sensing data fusion.</p>
+  </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="section">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <p>Dr. Mkaouar has authored several influential publications in the fields of remote sensing, vegetation modeling, and ecological research. Selected publications include:</p>
-            <ul class="publications-list">
-                <li><a href="https://link-to-publication1.com" target="_blank">Mkaouar, A., et al. (Year). Title of the publication. Journal Name.</a></li>
-                <li><a href="https://link-to-publication2.com" target="_blank">Mkaouar, A., et al. (Year). Title of the publication. Journal Name.</a></li>
-                <li><a href="https://link-to-publication3.com" target="_blank">Mkaouar, A., et al. (Year). Title of the publication. Journal Name.</a></li>
-            </ul>
-        </div>
-    </section>
+  <!-- Research Interests Section -->
+  <section id="interests">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>LiDAR and photogrammetry for environmental monitoring</li>
+      <li>Forest structure and biomass estimation</li>
+      <li>Data fusion and machine learning applications</li>
+      <li>Climate change modeling and carbon flux</li>
+    </ul>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p>If you would like to get in touch with Dr. Mkaouar for inquiries or collaborations, feel free to contact her using the details below:</p>
-            <ul class="contact-details">
-                <li>Email: <a href="mailto:ameni.mkaouar@example.com">ameni.mkaouar@example.com</a></li>
-                <li>Phone: +1 (123) 456-7890</li>
-                <li>Address: 123 Research St, City, State, ZIP</li>
-            </ul>
-        </div>
-    </section>
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <p>PhD in Remote Sensing, <strong>University of Tunis</strong>, 2020</p>
+    <p>Master's in Geospatial Technologies, <strong>University of Tunis</strong>, 2016</p>
+    <p>Bachelor's in Computer Science, <strong>University of Tunis</strong>, 2013</p>
+  </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Dr. Ameni Mkaouar. All Rights Reserved.</p>
-        </div>
-    </footer>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <a href="https://link-to-project-1.com" target="_blank">Project 1: Forest Biomass Modeling</a>
+    <a href="https://link-to-project-2.com" target="_blank">Project 2: LiDAR Data Processing</a>
+    <a href="https://link-to-project-3.com" target="_blank">Project 3: Carbon Flux Modeling</a>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <a href="path-to-publication-1.pdf" target="_blank">Publication 1: Forest Biomass Estimation</a>
+    <a href="path-to-publication-2.pdf" target="_blank">Publication 2: LiDAR and Photogrammetry Fusion</a>
+    <a href="path-to-publication-3.pdf" target="_blank">Publication 3: Remote Sensing for Climate Monitoring</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    <p>Phone: +123-456-7890</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ameni-mkaouar" target="_blank">LinkedIn Profile</a></p>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Dr. Ameni Mkaouar. All rights reserved.</p>
+  </footer>
 
 </body>
-
 </html>
