@@ -22,12 +22,13 @@ body {
 /* Header */
 header {
     background-color: #333;
-    color: #fff;
+    color: #fff; /* Default text color inside the header */
     padding: 20px 0;
     text-align: center;
 }
 
 .header-title {
+    color: #fff; /* Ensure this is explicitly set to white */
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
@@ -49,14 +50,14 @@ nav .nav-links li {
 }
 
 nav .nav-links a {
-    color: #fff;
+    color: #fff; /* White text for menu options */
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s;
 }
 
 nav .nav-links a:hover {
-    color: #f39c12;
+    color: #f39c12; /* Hover effect */
 }
 
 /* Section Styles */
