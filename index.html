@@ -1,328 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Researcher</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome icons -->
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-      color: #333;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Header & Navigation */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: #ff6600;
-      padding: 10px 20px;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li {
-      margin: 0 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s ease-in-out;
-    }
-
-    nav ul li a:hover {
-      color: #333;
-    }
-
-    /* Home Section */
-    #home {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 100px 20px 50px; /* Top padding for sticky nav */
-      background-color: #fff;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      margin-top: 100px;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      transition: transform 0.3s ease;
-    }
-
-    #home:hover {
-      transform: translateY(-5px);
-    }
-
-    #home img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 5px solid #ff6600;
-      margin-right: 30px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-
-    #home .profile-text {
-      max-width: 500px;
-    }
-
-    #home h1 {
-      font-size: 2.5em;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    #home p {
-      font-size: 1.2em;
-      color: #555;
-    }
-
-    #home .social-links a {
-      margin: 0 15px;
-      font-size: 30px;
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s ease-in-out;
-    }
-
-    #home .social-links a:hover {
-      color: #ff6600;
-    }
-
-    /* Section Styling */
-    section {
-      padding: 50px 20px;
-    }
-
-    h2 {
-      color: #ff6600;
-      font-size: 2.2em;
-      margin-bottom: 10px;
-    }
-/* Container for bio and photo */
-.bio-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Styling for the left section (photo and social links) */
-.bio-left {
-  flex: 1;
-  text-align: center;
+/* Body and Layout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.bio-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #ff6600;  /* Optional: add a border color to the photo */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.social-links a {
-  margin: 10px;
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
 
-.social-links img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
+.header-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.social-links img:hover {
-  transform: scale(1.1);  /* Slight hover effect for icons */
+.header-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Styling for the right section (bio text) */
-.bio-right {
-  flex: 2;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
-.bio-right h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+nav .nav-links li {
+    display: inline-block;
 }
 
-.bio-right p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
 }
 
-    /* Bio and Education Layout */
-    #bio, #interests, #education {
-      margin-top: 30px;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      flex-wrap: wrap;
+nav .nav-links a:hover {
+    color: #f39c12;
+}
+
+/* Section Styles */
+.section {
+    padding: 40px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.science-list,
+.publications-list,
+.contact-details {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.science-list li,
+.publications-list li,
+.contact-details li {
+    margin-bottom: 1rem;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.project-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-item p {
+    font-size: 1rem;
+}
+
+.project-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.project-item a:hover {
+    color: #f39c12;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-list {
+        grid-template-columns: 1fr;
     }
 
-    /* Responsive for smaller screens */
-    @media (max-width: 768px) {
-      #home {
+    nav .nav-links {
         flex-direction: column;
-        text-align: center;
-      }
-
-      #home img {
-        margin-bottom: 20px;
-      }
-
-      #home .profile-text {
-        max-width: 100%;
-      }
-
-      #bio, #interests, #education {
-        flex-direction: column;
-      }
+        gap: 1rem;
     }
-
-    /* Projects & Publications Section */
-    #projects, #publications {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    #projects a, #publications a {
-      color: #333;
-      font-size: 1.1em;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    #projects a:hover, #publications a:hover {
-      color: #ff6600;
-    }
-
-    /* Footer Section */
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 1em;
-    }
-
-  </style>
-</head>
-<body>
-
-  <!-- Navigation Bar -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#bio">Bio</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Home Section ------------------------------------------------------------------------------------------------------------------------------------------------------------- -
- <section id="home">    
-  <div class="bio-container">
-    <div class="bio-left">
-    <img src="1733868390031.jpg" alt="Your Photo" class="bio-photo">
-    <div class="profile-text">
-      <h1>Ameni Mkaouar</h1>
-      <p>Postdoctoral Research Associate at 
-        <a href="https://gestar2.umbc.edu/directory/researchers-l-q/" target="_blank">GESTAR II, UMBC </a>,/ 
-        <a href="https://science.gsfc.nasa.gov/sci/bio/ameni.mkaouar" target="_blank">NASA GSFC</a>
-      <p>
-      <div class="social-links">
-        <a href="https://github.com/Ameni-Mkaouar" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://orcid.org/0000-0002-0391-1024" target="_blank"><i class="fab fa-orcid"></i></a>
-        <a href="https://www.linkedin.com/in/ameni-mkaouar-8b472b143/?originalSubdomain=tn" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.researchgate.net/profile/Ameni-Mkaouar-2" target="_blank"><i class="fab fa-researchgate"></i></a>
-      </div>
-    </div>
-  <div class="bio-right">
-  <section id="bio">
-    <h2>Bio</h2>
-    <p> Dr. <strong>Mkaouar</strong> is a Postdoctoral Research Associate at GESTAR II, University of Maryland , Baltimore County (UMBC), and NASA Goddard Space Flight Center. Her research focuses on the development and application of 
-    advanced modeling techniques to study vegetation structure and topography. She uses remote sensing technologies, including LiDAR and photogrammetry, to improve our understanding of vegetation environments.
-    Dr. Mkaouar’s current work aims to refine vegetation structure estimation, with a particular focus on fusion techniques that combine different remote sensing data to achieve more accurate ecological and environmental insights.</p>
-<p>Prior to her current work, Dr. Mkaouar conducted research in various fields related to vegetation monitoring and landscape modeling. She has collaborated on projects using Terrestrial LiDAR to study vegetation structure.
-  Her work continues to evolve with the integration of cutting-edge data science approaches and modeling tools to address complex ecological questions.</p>
-</div>
-</section>
- 
-
-  <!-- Research Interests Section ----------------------------------------------------------------------------------------------------------------------------------------------------------->
-  <section id="interests">
-    <h2>Research Interests</h2>
-    <p>Highlight the main areas of your research and what drives your scientific endeavors.</p>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education">
-    <h2>Education</h2>
-    <p>List your degrees, institutions, and any key achievements in your academic career.</p>
-  </section>
-
-  <!-- Projects & Publications Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <a href="https://link-to-project-1.com" target="_blank">Project 1</a>
-    <a href="https://link-to-project-2.com" target="_blank">Project 2</a>
-    <a href="https://link-to-project-3.com" target="_blank">Project 3</a>
-  </section>
-
-  <section id="publications">
-    <h2>Publications</h2>
-    <a href="path-to-publication.pdf" target="_blank">Publication 1 (PDF)</a>
-    <a href="https://example.com" target="_blank">Publication 2 (Link)</a>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your-email@example.com</p>
-    <p>Phone: +1234567890</p>
-  </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2024 Your Name. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+}
