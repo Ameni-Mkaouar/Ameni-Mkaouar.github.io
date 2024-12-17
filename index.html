@@ -4,19 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Name - Researcher</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome icons -->
   <style>
-    /* Apply smooth scrolling for navigation */
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
     html {
       scroll-behavior: smooth;
     }
 
-    /* Styling for the navigation bar */
+    /* Header & Navigation */
     header {
-      position: sticky; /* Keeps the menu fixed on top */
+      position: fixed;
       top: 0;
-      background-color: #ff6600; /* Orange color */
-      padding: 10px 0;
+      left: 0;
+      right: 0;
+      background-color: #ff6600;
+      padding: 10px 20px;
       z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     nav ul {
@@ -32,50 +44,53 @@
     }
 
     nav ul li a {
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-size: 18px;
+      transition: color 0.3s ease-in-out;
     }
 
     nav ul li a:hover {
       color: #333;
     }
 
-    /* Styling for the sections */
-    section {
-      padding: 60px 20px; /* Add padding to avoid overlap with fixed header */
-      margin-top: 80px; /* Create space after sticky navbar */
-    }
-
-    /* Home section styling */
+    /* Home Section */
     #home {
-      background-color: #f4f7f6;
       display: flex;
-      flex-direction: row;
+      justify-content: center;
       align-items: center;
-      justify-content: flex-start;
-      padding: 30px;
+      padding: 100px 20px 50px; /* Top padding for sticky nav */
+      background-color: #fff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: 100px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: transform 0.3s ease;
     }
 
-    /* Styling for the photo */
+    #home:hover {
+      transform: translateY(-5px);
+    }
+
     #home img {
-      border-radius: 50%; /* Circular shape */
-      width: 200px; /* Larger photo size */
-      height: 200px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #ff6600;
       margin-right: 30px;
-      border: 5px solid #ff6600; /* Orange border around the photo */
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Shadow to make the photo stand out */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
-    /* Styling for the text next to the photo */
     #home .profile-text {
       max-width: 500px;
     }
 
-    /* Styling for the name, position, and social media links */
     #home h1 {
       font-size: 2.5em;
       color: #333;
+      margin-bottom: 10px;
     }
 
     #home p {
@@ -84,111 +99,164 @@
     }
 
     #home .social-links a {
-      margin: 0 10px;
-      font-size: 20px;
+      margin: 0 15px;
+      font-size: 30px;
       color: #333;
       text-decoration: none;
+      transition: color 0.3s ease-in-out;
     }
 
     #home .social-links a:hover {
       color: #ff6600;
     }
 
-    /* Styling for Bio, Interests, Education */
+    /* Section Styling */
+    section {
+      padding: 50px 20px;
+    }
+
+    h2 {
+      color: #ff6600;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    /* Bio and Education Layout */
     #bio, #interests, #education {
-      margin-top: 20px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
-    /* Styling for other sections */
-    #science, #publications, #projects, #contact {
-      background-color: #fff;
+    /* Responsive for smaller screens */
+    @media (max-width: 768px) {
+      #home {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #home img {
+        margin-bottom: 20px;
+      }
+
+      #home .profile-text {
+        max-width: 100%;
+      }
+
+      #bio, #interests, #education {
+        flex-direction: column;
+      }
     }
 
-    /* Styling for the publications section */
-    #publications .pdf-link, #publications .url-link {
-      margin-right: 10px;
+    /* Projects & Publications Section */
+    #projects, #publications {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
+
+    #projects a, #publications a {
+      color: #333;
+      font-size: 1.1em;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    #projects a:hover, #publications a:hover {
+      color: #ff6600;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1em;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- Header and Navigation -->
+  <!-- Navigation Bar -->
   <header>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#science">Science</a></li>
-        <li><a href="#publications">Publications</a></li>
+        <li><a href="#bio">Bio</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Home Section (with photo, name, position, and social media links) -->
+  <!-- Home Section -->
   <section id="home">
-    <!-- Profile photo with border and shadow effect -->
     <img src="your-photo.jpg" alt="Your Photo">
-    
-    <!-- Profile text with name, position, and social media links -->
     <div class="profile-text">
       <h1>Your Name</h1>
       <p>Current Position: Your Position</p>
       <div class="social-links">
-        <a href="https://github.com/your-profile" target="_blank">GitHub</a>
-        <a href="https://orcid.org/your-orcid" target="_blank">ORCID</a>
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
-        <a href="https://www.instagram.com/your-profile" target="_blank">Instagram</a>
-        <a href="https://www.researchgate.net/profile/your-profile" target="_blank">ResearchGate</a>
+        <a href="https://github.com/your-profile" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://orcid.org/your-orcid" target="_blank"><i class="fab fa-orcid"></i></a>
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/your-profile" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.researchgate.net/profile/your-profile" target="_blank"><i class="fab fa-researchgate"></i></a>
       </div>
     </div>
-    
-    <!-- Bio section -->
-    <div id="bio">
-      <h3>Bio</h3>
-      <p>Your bio goes here. Describe yourself, your career path, and any notable achievements.</p>
-    </div>
-    
-    <!-- Research Interests section -->
-    <div id="interests">
-      <h3>Research Interests</h3>
-      <p>Brief description of your research interests and areas of expertise.</p>
-    </div>
-    
-    <!-- Education section -->
-    <div id="education">
-      <h3>Education</h3>
-      <p>Details of your academic background (degrees, institutions, etc.).</p>
-    </div>
   </section>
 
-  <!-- Science Section -->
-  <section id="science">
-    <h1>Science Section</h1>
-    <p>Information about my scientific work.</p>
+  <!-- Bio Section -->
+  <section id="bio">
+    <h2>Bio</h2>
+    <p>Your detailed bio goes here, describing your research interests, career trajectory, and academic journey.</p>
   </section>
 
-  <!-- Publications Section -->
-  <section id="publications">
-    <h1>Publications Section</h1>
-    <p>List of my publications with links to PDFs or URLs:</p>
-    <div>
-      <a href="path-to-publication.pdf" class="pdf-link" target="_blank">PDF</a>
-      <a href="https://example.com" class="url-link" target="_blank">URL</a>
-    </div>
+  <!-- Research Interests Section -->
+  <section id="interests">
+    <h2>Research Interests</h2>
+    <p>Highlight the main areas of your research and what drives your scientific endeavors.</p>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <p>List your degrees, institutions, and any key achievements in your academic career.</p>
+  </section>
+
+  <!-- Projects & Publications Section -->
   <section id="projects">
-    <h1>Projects Section</h1>
-    <p>Details of my projects.</p>
+    <h2>Projects</h2>
+    <a href="https://link-to-project-1.com" target="_blank">Project 1</a>
+    <a href="https://link-to-project-2.com" target="_blank">Project 2</a>
+    <a href="https://link-to-project-3.com" target="_blank">Project 3</a>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <a href="path-to-publication.pdf" target="_blank">Publication 1 (PDF)</a>
+    <a href="https://example.com" target="_blank">Publication 2 (Link)</a>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h1>Contact Section</h1>
-    <p>Here are my contact details and the way to reach out to me.</p>
+    <h2>Contact</h2>
+    <p>Email: your-email@example.com</p>
+    <p>Phone: +1234567890</p>
   </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Your Name. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
